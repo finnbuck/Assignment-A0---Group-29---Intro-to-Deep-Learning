@@ -16,10 +16,18 @@ test_in = np.genfromtxt("test_in.csv", delimiter=",")
 test_out = np.genfromtxt("test_out.csv", delimiter=",")
 centers = np.genfromtxt("cloud_centers.csv", delimiter=",")
 
-nearest_mean = []
+train_nearest_mean = []
 for i in range(len(train_in)):
-    nearest_mean.append(dist_center(train_in[i]).item())
+    train_nearest_mean.append(dist_center(train_in[i]).item())
 
-correct = np.where(nearest_mean == train_out)[0]
-percentage = 100 * len(correct) / len(train_in)
-print(percentage)
+train_correct = np.where(train_nearest_mean == train_out)[0]
+train_percentage = 100 * len(train_correct) / len(train_in)
+print(f"{train_percentage:.2f}% from the train set is correctly classified using the nearest mean method.")
+
+test_nearest_mean = []
+for i in range(len(test_in)):
+    test_nearest_mean.append(dist_center(test_in[i]).item())
+
+test_correct = np.where(test_nearest_mean == test_out)[0]
+test_percentage = 100 * len(test_correct) / len(test_in)
+print(f"{test_percentage:.2f}% from the test set is correctly classified using the nearest mean method.")
