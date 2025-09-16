@@ -17,6 +17,7 @@ center = []
 for j in range(0, 10):
     center.append(np.mean(cloud[j], axis=0))
 
+np.savetxt("cloud_centers.csv", center, delimiter=",")
 
 distance = np.zeros((10, 10))
 for k in range(0, 10):
