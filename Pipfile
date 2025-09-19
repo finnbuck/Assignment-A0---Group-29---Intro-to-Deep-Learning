@@ -9,6 +9,7 @@ scikit-learn = "*"
 matplotlib = "*"
 pandas = "*"
 umap-learn = "*"
+seaborn = "*"
 
 [dev-packages]
 
