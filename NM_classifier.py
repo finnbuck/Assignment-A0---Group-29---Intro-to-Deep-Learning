@@ -10,7 +10,7 @@ def dist_center(x, c):
     abs = np.linalg.norm(res, axis=1)
     return np.where(abs == np.min(abs))[0][0]
 
-def NM_fit(X, c):
+def find_nearest_mean(X, c):
     nearest_mean = []
     for x in X:
         nearest_mean.append(dist_center(x, c).item())
