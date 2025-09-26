@@ -18,5 +18,6 @@ scatter = ax.scatter(embedding[:, 0],
                      s = 5)
 legend = ax.legend(*scatter.legend_elements(), title="Classes")
 ax.add_artist(legend)
+plt.title("U-MAP")
 plt.show()
 
