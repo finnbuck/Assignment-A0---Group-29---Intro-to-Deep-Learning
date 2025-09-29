@@ -17,4 +17,6 @@ legend = ax.legend(*PCA_reduced.legend_elements(num=10),
                     loc="upper right", title="Number")
 ax.add_artist(legend)
 
+plt.title("T-SNE")
+
 plt.show()
