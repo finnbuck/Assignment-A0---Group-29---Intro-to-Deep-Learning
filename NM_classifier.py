@@ -6,7 +6,7 @@ def dist(x, y):
  
 def dist_center(x, c):
     vector = np.tile(x, (10, 1))
-    res = np.abs(vector - c)
+    res = vector - c
     abs = np.linalg.norm(res, axis=1)
     return np.where(abs == np.min(abs))[0][0]
 
